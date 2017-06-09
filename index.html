@@ -1,7 +1,65 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="Content-Type" name="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>CodeSnippet</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+ <div class="main_page">
+ 	<div class="container-fluid header">
+ 	  <div class="container">
+ 	  	<div class="col-sm-4"><h2>CodeSnippets</h2></div>
+ 	  	<div class="col-sm-8">
+ 	  		<ul class="top_nav">
+ 	  			<li><a href="#">Search page</a></li>
+ 	  			<li><a href="#">Add snippet</a></li>
+ 	  		</ul>
+ 	  	</div>
+ 	  </div>
+ 	</div>
+ 	<div class="content">
+ 		<div class="col-md-6">
+ 		  <div class="add_cs_block">
+ 			<form>
+ 			 <textarea placeholder="Your code"></textarea>
+ 			 <input type="text" name="keywords">
+ 			 <input type="text" name="description">
+ 			 <input type="text" name="tags">
+ 			 <select>
+ 			 	<option selected disabled>Choose category</option>
+ 			 	<option value="js">js</option>
+ 			 	<option value="html">html/css</option>
+ 			 	<option value="server">server</option>
+ 			 </select>
+ 			 <input type="submit" value="Add snippet">
+ 			</form>	
+ 		  </div>
+ 		</div>
+ 		<div class="col-md-6">
+ 		 <div class="search_cs_block">
+ 		 	<input type="text" name="serchfield">
+ 		 	<div class="categories">
+ 		 		<ul>
+ 		 			<li>js</li>
+ 		 			<li>html/css</li>
+ 		 			<li>server stuff</li>
+ 		 			<li>All</li>
+ 		 		</ul>
+ 		 	</div>
+ 		 	<div class="result">
+ 		 		<h4>Result #1 ...</h4>
+ 		 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
+ 		 		<button class="copy">Copy</button>
+ 		 		<button class="go_to">Go to</button>
+ 		 		<div class="arrow"><img src="/img/arrow.png"></div>
+ 		 	</div>
+ 		 </div>
+ 		</div>
+ 	</div>
+ </div>
 </body>
 </html>
