@@ -260,6 +260,10 @@ button:hover{
 	background: #d6f3bf;
 	transition: 0.4s;
 }
+.main_page .search_cs_block .results_block{
+	height: 350px;
+	overflow-y: scroll;
+}
 .main_page .search_cs_block .result{
 	position: relative;
 	background: #fff;
