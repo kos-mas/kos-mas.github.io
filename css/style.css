@@ -226,7 +226,10 @@ button:hover{
 	text-align: center;
 	border: 1px solid #333;
 }
-
+.main_page .add_cs_block input[type="submit"]:hover{
+	background: #8ffc5e;
+	transition: 0.4s;
+}
 .main_page .search_cs_block input[name="serchfield"]{
 	width: 100%;
     line-height: 20px;
@@ -254,6 +257,7 @@ button:hover{
 	background: #d6f3bf;
 }
 .main_page .search_cs_block .result{
+	position: relative;
 	background: #fff;
 	border: 1px solid #333;
 	padding: 10px;
@@ -269,14 +273,28 @@ button:hover{
 	margin-bottom: 15px;
 }
 .main_page .search_cs_block .result button{
-	width: 47%;
-	line-height: 20px;
+	width: 45%;
+	line-height: 22px;
 	border-radius: 3px;
 	text-align: center;
 	border: 1px solid #333; 
 }
 .main_page .search_cs_block .result button.copy{
-	margin-right: 6%;
+	background: #ffecac;
+}
+.main_page .search_cs_block .result button.copy:hover{
+	transition: 0.4s;
+	background: #ffe489;
+}
+.main_page .search_cs_block .result button.go_to{
+	background: #c9ffb1;
+}
+.main_page .search_cs_block .result button.go_to:hover{
+	background: #8ffc5e;
+	transition: 0.4s;
+}
+.main_page .search_cs_block .result button.copy{
+	margin-right: 5%;
 }
 .main_page .search_cs_block .result .arrow{
 	position: absolute;
@@ -284,5 +302,5 @@ button:hover{
 	right: 10px;
 }
 .main_page .search_cs_block .result .arrow img{
-	width: 20px;
+	width: 30px;
 }
