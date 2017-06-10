@@ -256,6 +256,10 @@ button:hover{
 .main_page .search_cs_block .categories ul li.active{
 	background: #d6f3bf;
 }
+.main_page .search_cs_block .categories ul li:hover{
+	background: #d6f3bf;
+	transition: 0.4s;
+}
 .main_page .search_cs_block .result{
 	position: relative;
 	background: #fff;
@@ -298,8 +302,9 @@ button:hover{
 }
 .main_page .search_cs_block .result .arrow{
 	position: absolute;
-	bottom: 10px;
+	bottom: 12px;
 	right: 10px;
+	cursor: pointer;
 }
 .main_page .search_cs_block .result .arrow img{
 	width: 30px;
