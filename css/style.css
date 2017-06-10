@@ -192,6 +192,7 @@ button:hover{
 	font-size: 18px;
 	text-align: center;
 	font-weight: bold;
+	margin-bottom: 15px;
 }
 .main_page .add_cs_block input[type="text"]{
 	width: 100%;
@@ -267,7 +268,7 @@ button:hover{
 	transition: 0.4s;
 }
 .main_page .search_cs_block .results_block{
-	height: 350px;
+	height: 369px;
 	overflow-y: scroll;
 }
 .main_page .search_cs_block .result{
