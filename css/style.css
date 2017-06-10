@@ -153,8 +153,8 @@ button:hover{
     box-shadow: none;
 }
 .header{
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 	background: #ccc;
 	margin-bottom: 30px;
 }
@@ -188,11 +188,17 @@ button:hover{
 	background: #ccc;
 	padding: 15px;
 }
+.main_page .add_cs_block h3{
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+}
 .main_page .add_cs_block input[type="text"]{
 	width: 100%;
-	line-height: 20px;
+	line-height: 22px;
 	border: 1px solid #333;
 	margin-bottom: 15px;
+	padding: 0 10px;
 }
 .main_page .add_cs_block textarea{
 	width: 100%;
@@ -203,7 +209,7 @@ button:hover{
 }
 .main_page .add_cs_block select{
 	width: 100%;
-	line-height: 20px;
+	line-height: 22px;
 	-webkit-appearance: button;
     -webkit-user-select: none;
     background-repeat: no-repeat;
@@ -220,7 +226,7 @@ button:hover{
 }
 .main_page .add_cs_block input[type="submit"]{
 	width: 100%;
-	line-height: 20px;
+	line-height: 22px;
 	background: #7be870;
 	border-radius: 4px;
 	text-align: center;
@@ -232,7 +238,7 @@ button:hover{
 }
 .main_page .search_cs_block input[name="serchfield"]{
 	width: 100%;
-    line-height: 20px;
+    line-height: 22px;
     padding: 0 25px;
     border: 1px solid #333;
     border-radius: 10px;
