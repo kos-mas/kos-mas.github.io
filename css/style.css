@@ -280,8 +280,11 @@ button:hover{
 	border: 1px solid #333;
 	padding: 10px;
 	margin-bottom: 10px;
-    height: 40px;
-    overflow: hidden;
+    /*height: 40px;
+    overflow: hidden;*/
+}
+.main_page .search_cs_block .result .result_content{
+    display: none;
 }
 .main_page .search_cs_block .result h4{
 	font-size: 18px;
