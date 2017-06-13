@@ -90,7 +90,11 @@
 			$(this).parents('.result').find('.result_content').slideToggle();
 			$(this).toggleClass('rotate');
 		});
-		   
+		//copy code 
+		$(".result .copy").click(function(){
+        $(this).parents('result').find('p').select();
+        document.execCommand('copy');
+});
 
 	});
 </script>

@@ -321,12 +321,13 @@ button:hover{
 }
 .main_page .search_cs_block .result .arrow{
 	position: absolute;
-	bottom: 12px;
+	bottom: 7px;
 	right: 10px;
 	cursor: pointer;
 }
 .main_page .search_cs_block .result .arrow.rotate{
     transform: rotate(180deg);
+    bottom: 15px;
 }
 .main_page .search_cs_block .result .arrow img{
 	width: 30px;
