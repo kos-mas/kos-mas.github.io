@@ -82,9 +82,16 @@
  		
  	</div>
  </div>
-
+<script src="/js/jquery-3.1.0.min"></script>
 <script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function(){
+	$(document).ready(function(){
+		$('.results_block .result .arrow').click(function(){
+			$(this).parents('.result').find('.result_content').slideToggle();
+		});
+	});
+</script>
+<script type="text/javascript">
+	/*document.addEventListener("DOMContentLoaded", function(){
 
 		var result = document.querySelectorAll(".results_block .result .arrow");
 		for(var i=0;i<result.length;i++){
@@ -99,7 +106,7 @@
 function slideToggle() {
 	  var open = false;
 //var heightChecked = false;
-var initHeight = this.parentElement.height;
+var initHeight = ;
 var intval = null;
     window.clearInterval(intval);
     var mdiv = this.parentElement;
@@ -107,7 +114,7 @@ var intval = null;
         initHeight = mdiv.offsetHeight;
         heightChecked = true;
     }*/
-    if(open) {
+   /* if(open) {
         var h = initHeight;
         open = false;
         intval = setInterval(function(){
@@ -131,7 +138,8 @@ var intval = null;
     }
 }
 
-	});
+	});*/
+
 </script>
 </body>
 </html>
