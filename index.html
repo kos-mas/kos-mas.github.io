@@ -81,7 +81,7 @@
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function(){
 		var result = document.querySelectorAll(".results_block .result .arrow");
-		result.addEventListener("click", slideResult);
+		result[0].addEventListener("click", slideResult);
 		function slideResult(){
 			this.parentElement.style.height = "auto";
 		}
