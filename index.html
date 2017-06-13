@@ -55,18 +55,23 @@
  		 	<div class="results_block">
  		 	<div class="result">
  		 		<h4>Result #1 ...</h4>
- 		 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
+ 		 		<div class="result_content">
+ 		 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
  		 		<button class="copy">Copy</button><!--
  		 		--><button class="go_to">Go to</button>
+ 		 		</div>
+ 		 		
  		 		<div class="arrow"><img src="/img/arrow_down_icon.png"></div>
  		 	</div>
  		 	<div class="result">
  		 		<h4>Result #2 ...</h4>
+ 		 		<div class="result_content">
  		 		<p>
  		 		 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
  		 		</p>
  		 		<button class="copy">Copy</button><!--
  		 		--><button class="go_to">Go to</button>
+ 		 		</div>
  		 		<div class="arrow"><img src="/img/arrow_down_icon.png"></div>
  		 	</div>
  		 	</div>
@@ -80,14 +85,50 @@
 
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function(){
+
 		var result = document.querySelectorAll(".results_block .result .arrow");
 		for(var i=0;i<result.length;i++){
-          result[i].addEventListener('click',slideResult,false);
+          result[i].addEventListener('click',slideToggle,false);
         }
 		function slideResult(){
 			this.parentElement.style.height = "auto";
 		}
-		
+		// Slide toggle function
+		     var open = false;
+//var heightChecked = false;
+var initHeight = 60;
+var intval = null;
+
+function slideToggle() {
+    window.clearInterval(intval);
+    var mdiv = this;
+    /*if(!heightChecked) {
+        initHeight = mdiv.offsetHeight;
+        heightChecked = true;
+    }*/
+    if(open) {
+        var h = initHeight;
+        open = false;
+        intval = setInterval(function(){
+            h--;
+            mdiv.style.height = h + 'px';
+            if(h <= 0)
+                window.clearInterval(intval);
+            }, 1
+        );
+    }
+    else {
+        var h = 0;
+        open = true;
+        intval = setInterval(function(){
+            h++;
+            mdiv.style.height = h + 'px';
+            if(h >= initHeight)
+                window.clearInterval(intval);
+            }, 1
+        );
+    }
+}
 
 	});
 </script>
