@@ -89,6 +89,12 @@
 			console.log('arrow clicked');
 			$(this).parents('.result').find('.result_content').slideToggle();
 		});
+		   $('.results_block .result .arrow').toggle(function () {
+               $(this).addClass("rotate");
+           }, function () {
+               $(this).removeClass("rotate");
+});
+
 	});
 </script>
 <script type="text/javascript">
