@@ -271,6 +271,9 @@ button:hover{
 	height: 369px;
 	overflow-y: scroll;
 }
+.main_page .search_cs_block .results_block::-webkit-scrollbar { 
+    display: none; 
+}
 .main_page .search_cs_block .result{
 	position: relative;
 	background: #fff;
