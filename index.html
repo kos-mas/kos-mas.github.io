@@ -96,12 +96,12 @@
 		// Slide toggle function
 		     var open = false;
 //var heightChecked = false;
-var initHeight = 60;
+var initHeight = this.parentElement.height;
 var intval = null;
 
 function slideToggle() {
     window.clearInterval(intval);
-    var mdiv = this.parentElement.clientHeight;
+    var mdiv = this.parentElement;
     /*if(!heightChecked) {
         initHeight = mdiv.offsetHeight;
         heightChecked = true;
