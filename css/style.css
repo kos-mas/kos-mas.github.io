@@ -293,14 +293,15 @@ button:hover{
 }
 .main_page .search_cs_block .result p{
 	line-height: 1.2;
-	margin-bottom: 15px;
+	margin-top: 15px;
 }
 .main_page .search_cs_block .result button{
 	width: 40%;
 	line-height: 22px;
 	border-radius: 3px;
 	text-align: center;
-	border: 1px solid #333; 
+	border: 1px solid #333;
+    margin-top: 15px; 
 }
 .main_page .search_cs_block .result button.copy{
 	background: #ffecac;
