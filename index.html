@@ -91,10 +91,13 @@
 			$(this).toggleClass('rotate');
 		});
 		//copy code 
-		$(".result .copy").click(function(){
-        $(this).parents('result').find('p').select();
-        document.execCommand('copy');
-});
+		function copyToClipboard(element) {
+  var p = $(this).parents('.result').find('p');
+  $("body").append(p);
+  p.val($(element).text()).select();
+  document.execCommand("copy");
+  p.remove();
+}
 
 	});
 </script>
