@@ -86,6 +86,7 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('.results_block .result .arrow').click(function(){
+			console.log('arrow clicked');
 			$(this).parents('.result').find('.result_content').slideToggle();
 		});
 	});
