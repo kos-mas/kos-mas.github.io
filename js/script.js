@@ -1,90 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="Content-Type" name="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>CodeSnippet</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!--<script type="text/javascript" src="js/script.js"></script>-->
-</head>
-<body>
-
- <div class="main_page">
- 	<div class="header">
- 	  <div class="container">
- 	  	<div class="div_short"><h2>CodeSnippets</h2></div><!--
- 	  	--><div class="div_long">
- 	  		<ul class="top_nav">
- 	  			<li><a href="#">Search page</a></li>
- 	  			<li><a href="#">Add snippet</a></li>
- 	  		</ul>
- 	  	</div>
- 	  </div>
- 	</div>
- 	<div class="content">
- 	 <div class="container">
- 	 	
- 		  <div class="add_cs_block">
- 		   <h3>Add your snippet</h3>
- 			<form>
- 			 <textarea placeholder="Your code"></textarea>
- 			 <input type="text" name="keywords" placeholder="Keywords">
- 			 <input type="text" name="description" placeholder="Description">
- 			 <input type="text" name="tags" placeholder="Tags">
- 			 <select>
- 			 	<option selected disabled>Choose category</option>
- 			 	<option value="js">js</option>
- 			 	<option value="html">html/css</option>
- 			 	<option value="server">server</option>
- 			 </select>
- 			 <input type="submit" value="Add snippet">
- 			</form>	
- 		  </div>
- 		
- 	
- 		 <div class="search_cs_block">
- 		 	<input type="text" name="serchfield">
- 		 	<div class="categories">
- 		 		<ul>
- 		 			<li class="active">js</li>
- 		 			<li>html/css</li>
- 		 			<li>server stuff</li>
- 		 			<li>All</li>
- 		 		</ul>
- 		 	</div>
- 		 	<div class="results_block">
- 		 	<div class="result">
- 		 		<h4>Result #1 ...</h4>
- 		 		<div class="result_content">
- 		 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.</p>
- 		 		<button class="copy">Copy</button><!--
- 		 		--><button class="go_to">Go to</button>
- 		 		</div>
- 		 		
- 		 		<div class="arrow" data-id="open"><img src="/img/arrow_down_icon.png"></div>
- 		 	</div>
- 		 	<div class="result">
- 		 		<h4>Result #2 ...</h4>
- 		 		<div class="result_content" id="slider">
- 		 		<p>
- 		 		 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
- 		 		</p>
- 		 		<button class="copy">Copy</button><!--
- 		 		--><button class="go_to">Go to</button>
- 		 		</div>
- 		 		<div class="arrow" id="slide"><img src="/img/arrow_down_icon.png"></div>
- 		 	</div>
- 		 	</div>
- 		 	
- 		 </div>
- 		
- 	 </div>
- 		
- 	</div>
- </div>
-<script type="text/javascript">
-     window.onload = function() {
+ window.onload = function() {
     /*
     $(document).ready(function(){
         $('.results_block .result .arrow').click(function(){
@@ -160,6 +74,7 @@ var intval = null;
     });*/
 
 
+/*document.addEventListener("DOMContentLoaded", function(){
 
         var result = document.querySelectorAll(".results_block .result .arrow");
         for(var i=0;i<result.length;i++){
@@ -167,11 +82,11 @@ var intval = null;
     slideToggle(this);
 });
         }
-        
-    
-/*document.getElementById("slide").addEventListener("click", function(){
+        console.log('event listener added');
+    });*/
+document.getElementById("slide").addEventListener("click", function(){
     slideToggle(this);
-});*/
+});
 //select sibling (result content)
 function select(currObj){
 var parentofSelected = currObj.parentNode; // gives the parent DIV
@@ -188,17 +103,14 @@ var timer = null;
 var toggled = false;
 
 function slideToggle(arrow) {
-
     //console.log(select(this));
     //arrow.style.display = 'none';
     var controler = arrow;
     var slider = select(arrow);
-    //slider.style.display = 'none';
     //slider.style.height = minheight + 'px'; //not so imp,just for my example
- 
+    controler.onclick = function() {  
         clearInterval(timer);
         var instanceheight = parseInt(slider.style.height);  // Current height
-        console.log(instanceheight);
         var init = (new Date()).getTime(); //start time
         var height = (toggled = !toggled) ? maxheight: minheight; //if toggled
 
@@ -213,10 +125,6 @@ function slideToggle(arrow) {
                 clearInterval(timer);
             }
         },1);
-    
+    };
 };
   };
-
-</script>
-</body>
-</html>
