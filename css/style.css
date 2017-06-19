@@ -11,7 +11,9 @@
 /*------------------------------------*\
 RESET
 \*------------------------------------*/
-
+*{
+    box-sizing: border-box;
+}
 html,body,div,span,object,iframe,
 h1,h2,h3,h4,h5,h6,p,blockquote,pre,
 a,abbr,acronym,address,big,cite,code,
@@ -152,6 +154,25 @@ button:hover{
     transition: 0.4s;
     box-shadow: none;
 }
+.container{
+    width: 100%;
+    padding: 0 30px;
+}
+
+@media (min-width: 991px){
+    .container{
+        width: 800px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        width: 1000px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
 .header{
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -161,6 +182,15 @@ button:hover{
 .header h2{
 	font-size: 16px;
 	font-weight: bold;
+}
+.header .div_short{
+    display: inline-block;
+    width: 35%;
+}
+.header .div_long{
+    display: inline-block;
+    width: 65%;
+    text-align: right;
 }
 .header .top_nav li{
 	display: inline-block;
@@ -176,18 +206,21 @@ button:hover{
 	border-bottom: 1px solid #000;
 	transition: 0.4s;
 }
-@media (min-width: 1200px){
-	.main_page .container{
-		width: 1000px;
-	}
-}
+
+
 .main_page .add_cs_block, .main_page .search_cs_block{
-	width: 90%;
-	margin: 0 auto;
+    display: inline-block;
+	width: 46%;
+	margin: 0 auto;   
 	border: 1px solid #333;
 	background: #ccc;
 	padding: 15px;
 }
+
+.main_page .add_cs_block{
+    margin-right: 7%;
+}
+
 .main_page .add_cs_block h3{
 	font-size: 18px;
 	text-align: center;
@@ -284,7 +317,8 @@ button:hover{
     overflow: hidden;*/
 }
 .main_page .search_cs_block .result .result_content{
-    display: none;
+    height: 0;
+    overflow: hidden;
 }
 .main_page .search_cs_block .result h4{
 	font-size: 18px;

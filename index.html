@@ -5,15 +5,15 @@
     <meta http-equiv="Content-Type" name="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>CodeSnippet</title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.css">-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
  <div class="main_page">
- 	<div class="container-fluid header">
+ 	<div class="header">
  	  <div class="container">
- 	  	<div class="col-sm-4 text-left"><h2>CodeSnippets</h2></div>
- 	  	<div class="col-sm-8 text-right">
+ 	  	<div class="div_short"><h2>CodeSnippets</h2></div><!--
+ 	  	--><div class="div_long">
  	  		<ul class="top_nav">
  	  			<li><a href="#">Search page</a></li>
  	  			<li><a href="#">Add snippet</a></li>
@@ -21,9 +21,9 @@
  	  	</div>
  	  </div>
  	</div>
- 	<div class="container-fluid content">
+ 	<div class="content">
  	 <div class="container">
- 	 	<div class="col-md-6">
+ 	 	
  		  <div class="add_cs_block">
  		   <h3>Add your snippet</h3>
  			<form>
@@ -40,8 +40,8 @@
  			 <input type="submit" value="Add snippet">
  			</form>	
  		  </div>
- 		</div>
- 		<div class="col-md-6">
+ 		
+ 	
  		 <div class="search_cs_block">
  		 	<input type="text" name="serchfield">
  		 	<div class="categories">
@@ -61,29 +61,29 @@
  		 		--><button class="go_to">Go to</button>
  		 		</div>
  		 		
- 		 		<div class="arrow"><img src="/img/arrow_down_icon.png"></div>
+ 		 		<div class="arrow" data-id="open"><img src="/img/arrow_down_icon.png"></div>
  		 	</div>
  		 	<div class="result">
  		 		<h4>Result #2 ...</h4>
- 		 		<div class="result_content">
+ 		 		<div class="result_content" id="slider">
  		 		<p>
  		 		 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
  		 		</p>
  		 		<button class="copy">Copy</button><!--
  		 		--><button class="go_to">Go to</button>
  		 		</div>
- 		 		<div class="arrow"><img src="/img/arrow_down_icon.png"></div>
+ 		 		<div class="arrow" id="slide"><img src="/img/arrow_down_icon.png"></div>
  		 	</div>
  		 	</div>
  		 	
  		 </div>
- 		</div>
+ 		
  	 </div>
  		
  	</div>
  </div>
 <script src="/js/jquery-3.1.0.min.js"></script>
-<script type="text/javascript">
+<!--<script type="text/javascript">
 	$(document).ready(function(){
 		$('.results_block .result .arrow').click(function(){
 			console.log('arrow clicked');
@@ -100,9 +100,9 @@
 }
 
 	});
-</script>
-<script type="text/javascript">
-	/*document.addEventListener("DOMContentLoaded", function(){
+</script>-->
+<!--<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(){
 
 		var result = document.querySelectorAll(".results_block .result .arrow");
 		for(var i=0;i<result.length;i++){
@@ -112,24 +112,33 @@
 			this.parentElement.style.height = "auto";
 		}
 		// Slide toggle function
-		   
+function select(currObj){
+var parentofSelected = currObj.parentNode; // gives the parent DIV
+
+var children = parentofSelected.childNodes;
+var target_element = parentofSelected.querySelector(".result_content");
+return target_element;
+ } // end function		   
 
 function slideToggle() {
-	  var open = false;
+      
+var open = this.getAttribute('data-id');
+console.log(open);
 //var heightChecked = false;
-var initHeight = ;
+var initHeight = 90;
 var intval = null;
     window.clearInterval(intval);
-    var mdiv = this.parentElement;
+    var mdiv = select(this);
+    console.log(mdiv);
     /*if(!heightChecked) {
         initHeight = mdiv.offsetHeight;
         heightChecked = true;
     }*/
-   /* if(open) {
-        var h = initHeight;
+   if(open) {
+        var h = 0;
         open = false;
         intval = setInterval(function(){
-            h--;
+            //h--;
             mdiv.style.height = h + 'px';
             if(h <= 0)
                 window.clearInterval(intval);
@@ -137,10 +146,10 @@ var intval = null;
         );
     }
     else {
-        var h = 0;
+        var h = initHeight;
         open = true;
         intval = setInterval(function(){
-            h++;
+            //h++;
             mdiv.style.height = h + 'px';
             if(h >= initHeight)
                 window.clearInterval(intval);
@@ -149,8 +158,39 @@ var intval = null;
     }
 }
 
-	});*/
+	});
 
+</script>-->
+<script type="text/javascript">
+    var minheight = 0;
+var maxheight = 100;
+var time = 1000;
+var timer = null;
+var toggled = false;
+
+window.onload = function() {
+    var controler = document.getElementById('slide');
+    var slider = document.getElementById('slider');
+    slider.style.height = minheight + 'px'; //not so imp,just for my example
+    controler.onclick = function() {  
+        clearInterval(timer);
+        var instanceheight = parseInt(slider.style.height);  // Current height
+        var init = (new Date()).getTime(); //start time
+        var height = (toggled = !toggled) ? maxheight: minheight; //if toggled
+
+        var disp = height - parseInt(slider.style.height);
+        timer = setInterval(function() {
+            var instance = (new Date()).getTime() - init; //animating time
+            if(instance <= time ) { //0 -> time seconds
+                var pos = instanceheight + Math.floor(disp * instance / time);
+                slider.style.height =  pos + 'px';
+            }else {
+                slider.style.height = height + 'px'; //safety side ^^
+                clearInterval(timer);
+            }
+        },1);
+    };
+};
 </script>
 </body>
 </html>
